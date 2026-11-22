@@ -1,0 +1,293 @@
+/* Tinted frosted material, independently switchable from the color palette. */
+.glass-on {
+    --glass-fill: color-mix(in srgb, var(--spice-main) 70%, transparent);
+    --glass-raised: color-mix(in srgb, var(--spice-card) 78%, transparent);
+    --glass-edge: #ffffff20;
+    --glass-light: #ffffff10;
+    background: radial-gradient(ellipse at 5% 10%, color-mix(in srgb, var(--spice-button) 18%, transparent), transparent 48%), radial-gradient(ellipse at 95% 75%, #687f9c25, transparent 55%), var(--spice-sidebar)
+}
+
+.glass-on .sidebar {
+    background: color-mix(in srgb, var(--spice-sidebar) 65%, transparent);
+    border-right: 1px solid #ffffff0a;
+    backdrop-filter: blur(20px) saturate(125%)
+}
+
+.glass-on .main-shell {
+    background: var(--glass-fill);
+    border-color: var(--glass-edge);
+    box-shadow: inset 0 1px #ffffff0b;
+    backdrop-filter: blur(24px) saturate(120%)
+}
+
+.glass-on .topbar {
+    background: linear-gradient(#ffffff04, transparent)
+}
+
+.glass-on .player {
+    margin: 8px 12px;
+    border: 1px solid #ffffff22;
+    border-radius: 19px;
+    background: color-mix(in srgb, var(--spice-player) 70%, transparent);
+    backdrop-filter: blur(24px) saturate(145%);
+    box-shadow: inset 0 1px #ffffff14, 0 8px 30px #0003
+}
+
+.glass-on .quick-link,
+.glass-on .add-music,
+.glass-on .theme-swatch,
+.glass-on .playlist-choice {
+    background: var(--glass-raised);
+    border: 1px solid var(--glass-edge);
+    box-shadow: inset 0 1px #ffffff09;
+    backdrop-filter: blur(12px)
+}
+
+.glass-on .nav-item.active {
+    background: color-mix(in srgb, var(--spice-card) 75%, transparent);
+    box-shadow: inset 0 1px #ffffff0a
+}
+
+.glass-on .album-card:hover {
+    background: #ffffff09;
+    box-shadow: inset 0 0 0 1px #ffffff0c
+}
+
+.glass-on .search-field,
+.glass-on .sort-select {
+    background: var(--glass-raised);
+    border-color: var(--glass-edge);
+    box-shadow: inset 0 1px #ffffff07
+}
+
+.glass-on dialog,
+.glass-on .context-menu,
+.glass-on .queue-panel {
+    background: color-mix(in srgb, var(--spice-card) 87%, transparent);
+    border: 1px solid #ffffff26;
+    box-shadow: inset 0 1px #ffffff0c, 0 24px 70px #0004;
+    backdrop-filter: blur(28px) saturate(125%)
+}
+
+.glass-on dialog::backdrop {
+    background: #02070580;
+    backdrop-filter: blur(9px)
+}
+
+.glass-on .hero {
+    border-color: #ffffff23;
+    box-shadow: inset 0 1px #ffffff10;
+    background: linear-gradient(115deg, #374b2cd9, #263724c4 50%, #1c291dc7)
+}
+
+.glass-on .empty-collection {
+    background: linear-gradient(110deg, #ffffff05, transparent);
+    border-color: #ffffff1b
+}
+
+.glass-on .listening-room {
+    background: #090f0d
+}
+
+.glass-on .studio-backdrop {
+    background: radial-gradient(ellipse at 20% 20%, rgba(var(--viz-rgb), .23), transparent 55%), radial-gradient(ellipse at 84% 78%, rgba(var(--viz-secondary-rgb), .2), transparent 60%), #0b100e
+}
+
+.glass-on .studio-back,
+.glass-on .studio-modes,
+.glass-on .studio-select,
+.glass-on .studio-timing,
+.glass-on .studio-reader-tools {
+    background: rgba(22, 31, 27, .64);
+    border: 1px solid #ffffff24;
+    backdrop-filter: blur(18px) saturate(140%);
+    box-shadow: inset 0 1px #ffffff10, 0 9px 28px #0002
+}
+
+.glass-on .studio-footer {
+    margin: 0 22px 10px;
+    padding: 16px 20px;
+    border-radius: 18px;
+    border: 1px solid #ffffff20;
+    background: rgba(19, 28, 23, .64);
+    backdrop-filter: blur(22px) saturate(135%);
+    box-shadow: inset 0 1px #ffffff10, 0 9px 28px #0002
+}
+
+.glass-on .studio-art {
+    box-shadow: 0 22px 55px #0005, inset 0 1px #ffffff20;
+    border-color: #ffffff2b
+}
+
+.glass-on .studio-mode[aria-pressed=true],
+.glass-on .studio-mode[aria-pressed=true]:hover {
+    background: #eff4e6;
+    color: #152012;
+    box-shadow: inset 0 1px #fff8, 0 2px 8px #0002
+}
+
+.glass-on .studio-import,
+.glass-on .studio-lyrics-button {
+    border-radius: 22px;
+    background: #ffffff05;
+    border: 1px solid #ffffff16;
+    padding: 9px 12px
+}
+
+.glass-on .studio-import:hover,
+.glass-on .studio-lyrics-button:hover {
+    background: #ffffff0c
+}
+
+.glass-on .glass-toggle[aria-pressed=true],
+.glass-on [data-glass-toggle][aria-pressed=true] {
+    color: var(--spice-button);
+    background: #ffffff09;
+    box-shadow: inset 0 0 0 1px #ffffff16
+}
+
+.glass-setting {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    border: 1px solid #ffffff16;
+    border-radius: 11px;
+    background: #ffffff04;
+    margin: 0 0 22px
+}
+
+.glass-setting label {
+    flex: 1;
+    cursor: pointer
+}
+
+.glass-setting strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 550
+}
+
+.glass-setting span {
+    display: block;
+    margin-top: 7px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--spice-subtext)
+}
+
+.glass-setting input {
+    appearance: none;
+    width: 40px;
+    height: 24px;
+    border-radius: 20px;
+    position: relative;
+    flex-shrink: 0;
+    background: #ffffff20;
+    border: 1px solid #ffffff16;
+    cursor: pointer;
+    transition: background .2s
+}
+
+.glass-setting input::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: #d2d9ca;
+    transition: transform .2s
+}
+
+.glass-setting input:checked {
+    background: var(--spice-button);
+    border-color: transparent
+}
+
+.glass-setting input:checked::after {
+    transform: translateX(16px);
+    background: #1a2514
+}
+
+@media(max-width:1000px) {
+    #breadcrumb {
+        display: none
+    }
+
+    .glass-on .studio-footer {
+        margin-left: 14px;
+        margin-right: 14px;
+        padding-left: 14px;
+        padding-right: 14px
+    }
+}
+
+@media(max-width:760px) {
+    .topbar .offline-badge {
+        display: none
+    }
+
+    .glass-on .player {
+        margin: 6px 8px;
+        padding: 10px 12px;
+        border-radius: 16px
+    }
+
+    .glass-on .studio-footer {
+        margin: 0 8px 8px;
+        padding: 10px 12px;
+        border-radius: 15px
+    }
+
+    .glass-on .studio-modes {
+        padding: 3px
+    }
+
+    .glass-on .studio-import,
+    .glass-on .studio-lyrics-button {
+        padding: 7px 9px
+    }
+
+    .glass-on .sidebar {
+        backdrop-filter: blur(14px)
+    }
+
+    .glass-on .main-shell {
+        backdrop-filter: blur(16px)
+    }
+
+    .glass-setting {
+        padding: 14px
+    }
+}
+
+@media(prefers-reduced-transparency:reduce), (prefers-contrast:more) {
+
+    .glass-on .sidebar,
+    .glass-on .main-shell,
+    .glass-on .player,
+    .glass-on dialog,
+    .glass-on .context-menu,
+    .glass-on .queue-panel {
+        background: var(--spice-main);
+        backdrop-filter: none
+    }
+
+    .glass-on .studio-back,
+    .glass-on .studio-modes,
+    .glass-on .studio-select,
+    .glass-on .studio-footer,
+    .glass-on .studio-timing,
+    .glass-on .studio-reader-tools {
+        background: #17221b;
+        backdrop-filter: none
+    }
+
+    .glass-on .quick-link,
+    .glass-on .add-music {
+        background: var(--spice-card);
+        backdrop-filter: none
+    }
+}

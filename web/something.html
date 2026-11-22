@@ -1,0 +1,60 @@
+<div class="page-eyebrow">
+    MADE FOR YOUR KIND OF LISTENING</div>
+<div class="welcome-heading">
+    <h1>${greeting}</h1><span class="date-label">${esc(days)}</span>
+</div>
+<section class="hero">
+    <div class="hero-copy">
+        <div class="overline">YOUR FILES. YOUR FREQUENCY.</div>
+        <h2>Good music.<br>Closer to home.</h2>
+        <p>${tracks.length ? 'Rediscover the records you love. No algorithms, no interruptions. Just press play.' : 'All
+            the music you love. None of the noise.<br>A little space for your own collection.'}</p><button
+            class="primary-button" data-action="${tracks.length ? 'play-all' : 'import'}">${icon(tracks.length ? 'play'
+            : 'folder-plus', !!tracks.length)}${tracks.length ? 'Play your collection' : 'Bring your music
+            home'}</button>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+        <div class="record">
+            <div class="record-label"><span>SPICE · SIDE A</span></div>
+        </div>
+        <div class="sleeve">
+            <div class="sleeve-top"><span>THE LOCAL SESSIONS</span><span>33⅓ RPM</span></div>
+            <div class="sleeve-landscape"></div>
+            <div class="sleeve-title">closer<br>to home.</div>
+        </div>
+        <div class="hero-art-note">AN ENTIRE WORLD. ON YOUR LAPTOP.</div>
+    </div>
+</section>
+<div class="quick-links"><button class="quick-link" data-view="liked"><span class="quick-cover purple">${icon('heart',
+            true)}</span><span><strong>Liked songs</strong><small>${state.liked.filter(id => byId.has(id)).length}
+                ${state.liked.filter(id => byId.has(id)).length === 1 ? 'favorite' : 'favorites'}, all
+                yours</small></span></button><button class="quick-link" data-view="tracks"><span
+            class="quick-cover green">${icon('music')}</span><span><strong>Your
+                collection</strong><small>${tracks.length ? `${tracks.length.toLocaleString()} ${tracks.length === 1 ?
+                'song' : 'songs'}, zero limits` : 'Waiting for your first song'}</small></span></button><button
+        class="quick-link" data-view="recent"><span
+            class="quick-cover brown">${icon('clock')}</span><span><strong>Recently
+                played</strong><small>${recent.length ? 'Pick up where you left off' : 'Find your way
+                back'}</small></span></button></div>
+<section>
+    <div class="section-heading">
+        <div>
+            <h2>${recent.length ? 'Back in rotation' : tracks.length ? 'Fresh in your collection' : 'Your collection
+                starts here'}</h2>
+            <p class="section-subtitle">${recent.length ? 'Some things are worth another listen.' : 'Old favorites. New
+                discoveries. Every song has a home.'}</p>
+        </div>${tracks.length ? '<button class="text-button" data-view="albums">View all</button>' : ''}
+    </div>
+    ${tracks.length ? albumCards(grouped('albums', recent.length ? recent : newest), 'albums', 5) : `<div
+        class="empty-collection">
+        <div class="empty-discs" aria-hidden="true"></div>
+        <div>
+            <h3>A great collection is a personal thing.</h3>
+            <p>Connect a music folder and we’ll take care of the details.<br>Your albums, artwork, and artists —
+                beautifully in place.</p>
+        </div><button class="secondary-button" data-action="import">Add a folder</button>
+    </div>`}
+</section>
+<div class="bottom-note">${icon('leaf')}<div><strong>Less connected. More in tune.</strong>
+        <p>No account. No ads. No streaming. Just you and your music.</p>
+    </div><span class="overline">BUILT FOR LINUX. MADE FOR YOU.</span></div>
